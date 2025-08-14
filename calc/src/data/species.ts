@@ -2,7 +2,7 @@ import type * as I from './interface';
 import {type DeepPartial, toID, extend, assignWithout} from '../util';
 
 export interface SpeciesData {
-  readonly types: [I.TypeName] | [I.TypeName, I.TypeName];
+  readonly types: [I.TypeName] | [I.TypeName, I.TypeName] | [I.TypeName, I.TypeName, I.TypeName];
   // TODO: replace with baseStats
   readonly bs: {
     hp: number;
@@ -10087,11 +10087,11 @@ export class Species implements I.Species {
   }
 }
 
-class Specie implements I.Specie {
+class Specie implements I.Species {
   readonly kind: 'Species';
   readonly id: I.ID;
   readonly name: I.SpeciesName;
-  readonly types!: [I.TypeName] | [I.TypeName, I.TypeName];
+  readonly types!: [I.TypeName] | [I.TypeName, I.TypeName] | [I.TypeName, I.TypeName, I.TypeName];
   readonly baseStats: Readonly<I.StatsTable>;
   readonly weightkg!: number; // weight
   readonly nfe?: boolean;
