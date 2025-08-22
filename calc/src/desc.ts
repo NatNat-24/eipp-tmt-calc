@@ -24,6 +24,7 @@ export interface RawDesc {
   hits?: number;
   alliesFainted?: number;
   dwc?: boolean;
+  qwc?: boolean;
   isStellarFirstUse?: boolean;
   isBeadsOfRuin?: boolean;
   isSwordOfRuin?: boolean;
@@ -1040,6 +1041,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
     output += 'protected ';
   }
   if (description.dwc) {
+    output += 'EiPP Clause ';
+  }
+  if (description.qwc) {
     output += 'EiPP Clause ';
   }
   if (description.isDefenderDynamaxed) {
