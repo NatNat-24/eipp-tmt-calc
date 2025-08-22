@@ -14,7 +14,12 @@ const SV: StatID[] = GSC;
 export const STATS: Array<Array<StatID | 'spc'> | StatID[]> =
   [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
-type HPTypeName = Exclude<TypeName, 'Normal' | 'Fairy' | 'Stellar' | '???'>;
+type HPTypeName = Exclude<TypeName, 
+  'Normal' | 'Fairy' | 'Stellar' | '???' | 'Monke' | 'Angy' | 'Baby' | 'Friend' | 'Guys' | 'Liquid' | 'Vibe' | 
+  'Song' | 'Space' | 'Fluffy' | 'Sus' | 'Furry' | 'Bad' | 'Ancient' | 'Silly' | 'Stinky' | 'Sharp' | 
+  'Magic' | 'Gender' | 'Little' | 'Crab' | 'Dream' | 'Right' | 'Left' | 'Zoomer' | 'Gamer' | 'Dance' | 
+  'Boring' | 'Ugly' | 'Emerald' | 'Gun' | 'Pikachu' | 'Prime' | 'Ohio' | 'DeezNuts' | 'Normal2' | 
+  'Bean' | 'Boomer' | 'Smash' | 'OU' | 'Ball' | 'Sans' | 'Reverse' | 'Type'>;
 
 const HP_TYPES = [
   'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
