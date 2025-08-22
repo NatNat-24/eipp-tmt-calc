@@ -10,7 +10,7 @@ export type AbilityName = string & As<'AbilityName'>;
 export type ItemName = string & As<'ItemName'>;
 export type MoveName = string & As<'MoveName'>;
 export type SpeciesName = string & As<'SpeciesName'>;
-
+ 
 export type StatusName = 'slp' | 'psn' | 'brn' | 'frz' | 'par' | 'tox';
 
 export type GameType = 'Singles' | 'Doubles';
@@ -28,7 +28,11 @@ export type NatureName =
 export type TypeName =
   'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' |
   'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' |
-  'Stellar' | '???';
+  'Stellar' | '???' | 'Monke' | 'Angy' | 'Baby' | 'Friend' | 'Guys' | 'Liquid' | 'Vibe' | 
+  'Song' | 'Space' | 'Fluffy' | 'Sus' | 'Furry' | 'Bad' | 'Ancient' | 'Silly' | 'Stinky' | 'Sharp' | 
+  'Magic' | 'Gender' | 'Little' | 'Crab' | 'Dream' | 'Right' | 'Left' | 'Zoomer' | 'Gamer' | 'Dance' | 
+  'Boring' | 'Ugly' | 'Emerald' | 'Gun' | 'Pikachu' | 'Prime' | 'Ohio' | 'DeezNuts' | 'Normal2' | 
+  'Bean' | 'Boomer' | 'Smash' | 'OU' | 'Ball' | 'Sans' | 'Reverse' | 'Type';
 
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
 
@@ -142,7 +146,7 @@ export interface Species {
 
 export interface Specie extends Data<SpeciesName> {
   readonly kind: 'Species';
-  readonly types: [TypeName] | [TypeName, TypeName];
+  readonly types: [TypeName] | [TypeName, TypeName] | [TypeName, TypeName, TypeName];
   readonly baseStats: Readonly<StatsTable>;
   readonly weightkg: number;
   readonly nfe?: boolean;

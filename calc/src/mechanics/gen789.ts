@@ -406,7 +406,17 @@ export function calculateSMSSSV(
       isRingTarget
     )
     : 1;
-  let typeEffectiveness = type1Effectiveness * type2Effectiveness;
+  const type3Effectiveness = defender.types[2]
+    ? getMoveEffectiveness(
+      gen,
+      move,
+      defender.types[2],
+      isGhostRevealed,
+      field.isGravity,
+      isRingTarget
+    )
+    : 1;
+  let typeEffectiveness = type1Effectiveness * type2Effectiveness * type3Effectiveness;
 
   if (defender.teraType && defender.teraType !== 'Stellar') {
     typeEffectiveness = getMoveEffectiveness(
@@ -1796,8 +1806,10 @@ export function calculateFinalModsSMSSSV(
  if (typeEffectiveness === 4 && field.defenderSide.isDWC === true && (move.timesUsed! === 1 || move.timesUsed! >1 && hitCount === 0)) {
   finalMods.push(2048);
   desc.dwc = true;
-  }
-
+ } else if (typeEffectiveness === 8) {
+  finalMods.push(2048);
+  desc.qwc = true;
+ }
   return finalMods;
 }
 
